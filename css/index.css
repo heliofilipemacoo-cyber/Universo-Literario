@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+
+:root {
+    --cor-primaria: #1170ff;
+    --cor-primaria-hover: #2b80ff;
+    --cor-secundaria: #fff;
+
+    --background-secundario: #dbdbdb;
+    --background-secundario-soft: #dddee0;
+    --background-body: #1a1b1b;
+    --background-primario: #292b2c;
+    --background-primario-soft: #3d4142;
+}
+
+nav {
+    border-bottom: 1px solid var(--background-primario-soft);
+    background-color: var(--background-primario);
+    color: var(--cor-secundaria);
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+.material-symbols-sharp {
+    font-size: 36px;
+}
+
+.bem_vindo_bv {
+    font-size: 1.6em;
+    display: block;
+    line-height: 1em;
+    color: var(--cor-secundaria);
+}
+
+.hero {
+    position: relative;
+    padding: 14px;
+    border-bottom: 3px solid #c4c4c4;
+    min-height: 360px;
+    overflow: hidden;
+    margin-bottom: 140px;
+}
+
+.hero::before {
+    box-shadow: inset 2px -4px 14px rgba(0, 0, 0, 0.527);
+    position: absolute;
+    content: "";
+    background-color: var(--background-primario-soft);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: -1;
+    background-image: url(../imagens/livros_acima_de_uma_mesa.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bem_vindo_univ {
+    color: var(--cor-primaria);
+    font-size: 1.2em;
+    padding-left: 8px;
+    line-height: 1.5em;
+    display: block;
+}
+
+.bem_vindo_literario {
+    display: block;
+    line-height: 1em;
+    font-size: .8em;
+    color: var(--cor-secundaria);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-transform: capitalize;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--cor-secundaria);
+    font-family: "Oswald", serif;
+    text-shadow: 1px 1px 4px #000;
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+nav h1 .navU {
+    color: var(--cor-primaria);
+}
+
+nav h1 {
+    font-size: 3em;
+}
+
+html {
+    background-color: var(--background-body);
+}
+
+.big_aspas {
+    font-size: 4em;
+    font-family: "Oswald", sans-serif;
+}
+
+body {
+    box-shadow: inset 2px 6px 6px #0000007e;
+    margin: auto;
+    color: var(--background-secundario);
+    max-width: 768px;
+    font-family: "Open Sans", sans-serif;
+    background-color: var(--background-primario-soft);
+}
+
+.sect1 {
+    background-image: url(../imagens/livro_com_flor_e_tom_cinza.jpg);
+    margin-top: 90px;
+    box-shadow: inset 0px -4px 6px #00000088;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sect1 div {
+    max-width: 280px;
+    background-color: #0000009d;
+}
+
+.sect1 h3 {
+    padding: 10px 0;
+    font-family: "Open Sans", sans-serif;
+
+    text-transform: none;
+    display: block;
+}
+
+.sect2 {
+    margin-top: 80px;
+}
+
+.sectLiv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 18px;
+}
+
+.livro {
+    margin: auto;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 260px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.384);
+}
+.livro .sobreLiv{
+    display: flex;
+    flex-wrap: wrap;
+    
+    padding: 0;
+    margin: auto;
+}
+
+.sobreLiv span{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 120px;
+    text-align: left;
+    padding: 8px 12px;
+}
+.sobreLiv img{
+    max-width: 220px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 120px;
+}
+
+.livro .buyButton {
+    margin: 16px 38px;
+    background-color: #02bb02;
+    border-radius: 12px;
+    border: none;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    font-size: 1.15em;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    margin: auto;
+    padding: 10px 30px;
+    transition: all .3s ease;
+}
+.livro{
+    padding: 0;
+    padding-bottom: 14px;
+    margin: auto;
+}
+
+.livro p{
+    padding: 22px 30px;
+}
+
+.livro .buyButton:hover {
+    transform: translateY(-1px);
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.384);
+    background-color: #0fb90f;
+}
+
+.sect2 h2 {
+    display: inline-block;
+}
+
+.sect2 .big_aspas {
+    line-height: .01em;
+    display: inline;
+    color: grey;
+}
+
+section div {
+    padding: 22px;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 8px;
+}
+
+.intro {
+    box-shadow: inset 2px 6px 6px #0000007e;
+    background-color: var(--background-primario);
+    padding: 22px;
+    font-size: 1.2em;
+    border-radius: 22px;
+    margin: 22px;
+}
+
+* {
+    z-index: 1;
+    inset: 1;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .sect1 {
+        background-image: url(../imagens/livro_com_flor_e_tom_cinza.jpg);
+        margin-top: 120px;
+        box-shadow: inset 0px -4px 6px #00000088;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .sect1 div {
+        max-width: 340px;
+    }
+
+
+
+    .sect1 h3 {
+        padding: 12px 0;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1444px) {}
