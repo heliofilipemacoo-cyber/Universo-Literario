@@ -14,7 +14,8 @@
 }
 
 nav {
-    border-bottom: 1px solid var(--background-primario-soft);
+    width: 100%;
+    outline: 3px solid #c4c4c473;
     background-color: var(--background-primario);
     color: var(--cor-secundaria);
     position: sticky;
@@ -110,12 +111,16 @@ html {
 }
 
 body {
-    box-shadow: inset 2px 6px 6px #0000007e;
-    margin: auto;
     color: var(--background-secundario);
-    max-width: 768px;
     font-family: "Open Sans", sans-serif;
+    background-color: var(--background-primario);
+}
+
+main {
     background-color: var(--background-primario-soft);
+    box-shadow: 2px 4px 6px #00000059;
+    margin: auto;
+    max-width: 768px;
 }
 
 .sect1 {
@@ -148,6 +153,7 @@ body {
 .sectLiv {
     display: flex;
     flex-wrap: wrap;
+    flex-basis: 269px;
     gap: 16px;
     padding: 18px;
 }
@@ -156,39 +162,55 @@ body {
     margin: auto;
     flex-shrink: 1;
     flex-grow: 1;
-    flex-basis: 260px;
+    flex-basis: 160px;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.384);
 }
 
 .livro .sobreLiv {
     display: flex;
     flex-wrap: wrap;
-
     padding: 0;
     margin: auto;
 }
 
 .sobreLiv span {
     flex-grow: 1;
-    flex-shrink: 1;
+    flex-shrink: 0;
     flex-basis: 120px;
     text-align: left;
     padding: 8px 12px;
 }
 
 .sobreLiv img {
-    max-width: 220px;
     flex-grow: 1;
-    flex-shrink: 1;
+    flex-shrink: 0;
+    max-width: 100%;
     flex-basis: 120px;
 }
 
+.livro .prevButton {
+    background-color: #b4b4b418;
+    border-radius: 6px;
+    border: 2px solid #b4b4b46b;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    font-size: 1.15em;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    margin: 8px auto;
+    padding: 10px 30px;
+    transition: background-color .3s ease;
+}
+
+.livro .prevButton:hover {
+    background-color: #b4b4b428;
+}
+
 .livro .buyButton {
-    margin: 16px 38px;
-    background-color: #02bb02;
-    border-radius: 12px;
-    border: none;
-    color: #000;
+    background-color: #03c003;
+    border-radius: 8px;
+    border: 2px solid #72fa72;
     font-family: 'Times New Roman', Times, serif;
     text-transform: uppercase;
     font-size: 1.15em;
@@ -197,7 +219,14 @@ body {
     display: block;
     margin: auto;
     padding: 10px 30px;
-    transition: all .3s ease;
+    transition:
+        background-color .5s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+
+.livro .buyButton:hover {
+    background-color: #1dd31d;
 }
 
 .livro {
@@ -207,13 +236,7 @@ body {
 }
 
 .livro p {
-    padding: 22px 30px;
-}
-
-.livro .buyButton:hover {
-    transform: translateY(-1px);
-    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.384);
-    background-color: #0fb90f;
+    padding: 12px 22px;
 }
 
 .sect2 h2 {
@@ -267,7 +290,21 @@ section h2 {
         max-width: 340px;
     }
 
+    .livro {
+        margin: auto;
+        flex-shrink: 0;
+        flex-grow: 1;
+        flex-basis: 200px;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.384);
+    }
 
+    .livro .sobreLiv {
+        display: flex;
+        flex-wrap: wrap;
+
+        padding: 0;
+        margin: auto;
+    }
 
     .sect1 h3 {
         padding: 12px 0;

@@ -23,13 +23,16 @@
             </span>
         </h1>
     </nav>
-    <header>
-        <div class="hero">
-            <span class="bem_vindo_bv">Bem-vindo ao </span>
-            <h1><span class="bem_vindo_univ">Universo</span> <span class="bem_vindo_literario">Literário!</span></h1>
-        </div>
-    </header>
+
     <main>
+        <header>
+            <div class="hero">
+                <span class="bem_vindo_bv">Bem-vindo ao </span>
+                <h1><span class="bem_vindo_univ">Universo</span> <span class="bem_vindo_literario">Literário!</span>
+                </h1>
+            </div>
+        </header>
+
         <section class="intro">
             <p>Seja bem-vindo ao Universo Literário. Onde cada página esconde uma verdade... e cada história tem algo a
                 dizer.</p>
@@ -67,20 +70,27 @@
 
             <div class="livro">
                 <div class="sobreLiv">
-                    <img src="imagens/d_317-en.png" alt="">
+                    <picture>
+                        <source srcset="imagens/d_317-en.png" lang="en">
+                        <source srcset="imagens/d_317-pt.png" lang="pt">
+                        <img src="imagens/d_317-pt.png" alt="Diario 317">
+                    </picture>
                     <span>
-                        Autor: Laynel Filipe <br>
+
                     </span>
                 </div>
                 <p class="descr">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit!
                 </p>
+                <button type="button" class="prevButton">Pre-visualização</button>
                 <button type="button" class="buyButton">Comprar já</button>
             </div>
+
             <div class="livro">
                 <div class="descr">
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis dignissimos non vel ullam!
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis dignissimos non vel
+                        ullam!
                     </p>
                     <button type="button" class="buyButton">Comprar já</button>
                 </div>
@@ -88,7 +98,8 @@
             <div class="livro">
                 <div class="descr">
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis dignissimos non vel ullam!
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis dignissimos non vel
+                        ullam!
                     </p>
                     <button type="button" class="buyButton">Comprar já</button>
                 </div>
