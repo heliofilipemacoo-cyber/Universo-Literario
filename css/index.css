@@ -159,22 +159,24 @@ body {
     flex-basis: 260px;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.384);
 }
-.livro .sobreLiv{
+
+.livro .sobreLiv {
     display: flex;
     flex-wrap: wrap;
-    
+
     padding: 0;
     margin: auto;
 }
 
-.sobreLiv span{
+.sobreLiv span {
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 120px;
     text-align: left;
     padding: 8px 12px;
 }
-.sobreLiv img{
+
+.sobreLiv img {
     max-width: 220px;
     flex-grow: 1;
     flex-shrink: 1;
@@ -197,13 +199,14 @@ body {
     padding: 10px 30px;
     transition: all .3s ease;
 }
-.livro{
+
+.livro {
     padding: 0;
     padding-bottom: 14px;
     margin: auto;
 }
 
-.livro p{
+.livro p {
     padding: 22px 30px;
 }
 
