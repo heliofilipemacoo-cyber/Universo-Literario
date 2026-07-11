@@ -165,6 +165,14 @@ main {
 .descr {
     padding: 12px;
 }
+.descr p {
+    display: -webkit-box;
+    line-clamp: auto;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 .livro {
     background-color: #474D52;

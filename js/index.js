@@ -71,3 +71,65 @@ prevButton.forEach((elemento, index) => {
         
     })
 });
+
+// Sistema de adicao
+sectLiv = document.querySelector(".sectLiv");
+
+class True_content {
+    // Regra - A imagem a ser adicionada deve ser em pt inicialmente, a imagem em pt e en devem estar na mesma pasta e a diverenca ente elas deve ser apenas a ulimacao pt ou en
+    constructor(whereToPut){
+        this.whereToPut = whereToPut;
+    }
+
+    add_more(img_src_pt, img_alt, prevLink, conteudo) {
+        const img_pt = img_src_pt;
+        const img_en = img_src_pt.replace(`pt`, `en`);
+        img_langs = [img_pt, img_en];
+        for (let index = 0; index < img_langs.length; index++) {
+            this.whereToPut.innerHTML += `
+            <div class="livro"> 
+                <div class="sobreLiv">
+                    <img src="${img_langs[index]}" alt="${img_alt}">
+                </div>
+                <div class="descr">
+                    <p>
+                        ${conteudo}
+                    </p>
+                    <div class="descrButtons">
+                        <button type="button" class="prevButton" onclick="aboutBook('${img_langs[index]}', '${img_alt}', '${prevLink}', '${conteudo}')">Pre-visualização</button>
+                        <a href="#"><button type="button" class="buyButton">Comprar já</button></a>
+                    </div>
+                </div>
+            </div>
+            `;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+            /* <div class="livro"> 
+                <div class="sobreLiv">
+                    <picture>
+                        <source srcset="imagens/between_mirrors-en.webp" lang="en">
+                        <source srcset="imagens/between_mirrors-pt.webp" lang="pt">
+                        <img src="imagens/between_mirrors-pt.webp" alt="Between mirrors">
+                    </picture>
+                </div>
+                <div class="descr">
+                    <p>
+                         Facilis exercitationem quod voluptatibus veniam illum unde eum vero eius soluta itaque modi quos facere amet laudantium, placeat optio consectetur cumque enim.
+                    </p>
+                    <div class="descrButtons">
+                        <button type="button" class="prevButton">Pre-visualização</button>
+                        <button type="button" class="buyButton">Comprar já</button>
+                    </div>
+                </div>
+            </div>
+            */
