@@ -4,13 +4,16 @@
 :root {
     --cor-primaria: #1170ff;
     --cor-primaria-hover: #2b80ff;
-    --cor-secundaria: #fff;
-
-    --background-secundario: #dbdbdb;
-    --background-secundario-soft: #dddee0;
+    --cor-secundaria: #ffffff;
+    
     --background-body: #1a1b1b;
     --background-primario: #292b2c;
-    --background-primario-soft: #3d4142;
+    --background-primario-soft: #202020;
+    
+    --background-card: #34373A;
+    --background-card-hover: #3d4043;
+    
+    --texto-secundario: #d6d6d6;
 }
 
 nav {
@@ -26,6 +29,15 @@ nav {
 
 .material-symbols-sharp {
     font-size: 36px;
+    animation: colorLoop 1.7s ease-in-out alternate infinite;
+}
+@keyframes colorLoop{
+    from { 
+        color: var(--cor-primaria-hover);
+    }
+    to { 
+        color: var(--cor-primaria);
+    }
 }
 
 .bem_vindo_bv {
@@ -44,20 +56,19 @@ nav {
 }
 
 .hero::before {
-    box-shadow: inset 2px -4px 14px rgba(0, 0, 0, 0.527);
-    position: absolute;
+    filter: blur(0px);
     content: "";
-    background-color: var(--background-primario-soft);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: absolute;
     inset: 0;
     z-index: -1;
-    background-image: url(../imagens/back/livros_acima_de_uma_mesa.webp);
+    
+    background-image: linear-gradient(#00000073, #00000073), url("../imagens/back/livros_acima_de_uma_mesa.webp");
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
+    box-shadow: inset 0 -10px 20px #00000073;
 }
 
 .bem_vindo_univ {
@@ -84,7 +95,7 @@ h4 {
     letter-spacing: 2px;
     color: var(--cor-secundaria);
     font-family: "Oswald", serif;
-    text-shadow: 1px 1px 4px #000;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, .6);
 }
 
 h1 {
@@ -97,10 +108,12 @@ nav h1 .navU {
 }
 
 nav h1 {
-    font-size: 3em;
+    font-size: 2.2em;
+    padding-left: 16px;
 }
 
 html {
+    scroll-behavior: smooth;
     background-color: var(--background-body);
 }
 
@@ -109,9 +122,23 @@ html {
     font-family: "Oswald", sans-serif;
 }
 
+.genero {
+    background: #303234;
+    padding: 16px;
+    border-radius: 10px;
+    text-align: center;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.genero:hover {
+    background: var(--cor-primaria);
+    transform: translateY(-4px);
+}
+
 body {
     position: relative;
-    color: var(--background-secundario);
+    color: var(--texto-secundario);
     font-family: "Open Sans", sans-serif;
     background-color: var(--background-primario);
 }
@@ -142,7 +169,7 @@ main {
 .sect1 h3 {
     padding: 10px 0;
     font-family: "Open Sans", sans-serif;
-
+    
     text-transform: none;
     display: block;
 }
@@ -176,22 +203,34 @@ main {
 }
 
 .livro {
-    background-color: #474D52;
-    border-end-start-radius: 8px;
-    border-end-end-radius: 8px;
-    box-shadow: 1px 2px 8px #0000004A;
-}
-
-.livro .sobreLiv {
     padding: 0;
     margin: auto;
+    background: var(--background-card);
+    border-radius: 10px;
+    overflow: hidden;
+    
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background-color .3s ease;
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .30);
 }
 
 .sobreLiv img {
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 100%;
+    transition: transform .4s ease;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 100%;
     flex-basis: 120px;
+}
+
+.livro:hover img {
+    transform: scale(1.03);
 }
 
 .descrButtons {
@@ -208,64 +247,62 @@ main {
 .livro .prevButton {
     width: 100%;
     padding: 8px 0;
-    background-color: #b4b4b418;
-    border-radius: 6px;
-    border: 2px solid #b4b4b46b;
-    font-family: 'Times New Roman', Times, serif;
-    text-transform: uppercase;
-    font-size: 1.15em;
-    font-weight: bold;
-    color: #fff;
-    display: block;
-    transition: background-color .3s ease;
+    
+    background: transparent;
+    
+    border: 2px solid var(--cor-primaria);
+    
+    color: white;
+    
+    border-radius: 8px;
+    
+    transition: .3s;
 }
 
 .livro .prevButton:hover {
-    background-color: #b4b4b43f;
+    background: var(--cor-primaria);
 }
 
 .livro .buyButton {
-    width: 100%;
-    text-align: center;
     text-decoration: none;
-    padding: 8px 0;
-    background-color: #04b304;
-    border-radius: 8px;
-    border: 2px solid #65df65;
-    font-family: 'Times New Roman', Times, serif;
-    text-transform: uppercase;
-    font-size: 1.15em;
+    font-size: 1.2em;
     font-weight: bold;
-    color: #fff;
+    color: var(--texto-secundario);
+    padding: 8px 0;
+    text-align: center;
     display: block;
+    margin: auto;
+    width: 100%;
+    border-radius: 8px;
+    background: #00B300;
+    border: 2px solid #48df48;
+    
     transition:
-        background-color .5s ease,
-        box-shadow .3s ease,
-        transform .3s ease;
+        transform .25s,
+        box-shadow .25s,
+        background .25s;
 }
 
 .livro .buyButton:hover {
-    background-color: #1dd31d;
-}
-
-.livro {
-    padding: 0;
-    margin: auto;
+    background: #08C908;
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .35);
 }
 
 
-.sect2 h2 {
-    display: inline-block;
-}
-
-.sect2 .big_aspas {
-    line-height: .01em;
-    display: inline;
-    color: grey;
+.livro:hover {
+    background: var(--background-card-hover);
+    transform: translateY(-6px);
+    
+    box-shadow: 0 14px 24px rgba(0, 0, 0, .45);
 }
 
 section .content-1 {
     padding: 14px;
+    font-size: 1.16em;
+}
+.content-1 p{
+    margin-top: 14px;
 }
 
 section h2 {
@@ -274,11 +311,12 @@ section h2 {
 }
 
 .intro {
-    background-color: #7979792d;
-    box-shadow: 0px 0px 8px #ffffff77;
+    background: #2E2F31;
+    border-left: 5px solid var(--cor-primaria);
+    border-radius: 8px;
     padding: 22px;
-    font-size: 1.2em;
-    margin: auto;
+    font-size: 1.15em;
+    line-height: 1.6em;
 }
 
 * {
@@ -322,11 +360,6 @@ section h2 {
     width: 100%;
     height: 60%;
     background-color: #474D52;
-    /* transform: translateY(300px); */
-}
-
-.bookPrevClass.show {
-    /* transform: translateY(0px); */
 }
 
 .bookPrevClass::-webkit-scrollbar {
@@ -354,22 +387,34 @@ section h2 {
 .bookPrevClass>.prevLink {
     transition: all .3s ease;
     text-decoration: none;
-    color: #d0ffd0;
+    color: var(--cor-primaria);
     text-align: center;
     margin: 18px 0;
-    font-size: 1.6em;
+    font-size: 1.4em;
 }
 
 .bookPrevClass>.prevLink a {
     text-decoration: underline;
     text-transform: uppercase;
-    color: #d0ffd0;
+    color: var(--cor-primaria);
 }
 
 .bookPrevClass a:hover {
     color: #beffbe;
 }
-
+::-webkit-scrollbar-thumb {
+    background-color: #8a8a8ac0;
+    border-radius: 100px;
+}
+::-webkit-scrollbar-button {
+    display: block;
+    height: 8px;
+    border-top-right-radius: 100%;
+}
+::-webkit-scrollbar {
+    display: block;
+    width: .8rem;
+}
 
 .bookPrevClass {
     padding: 30px;
@@ -379,6 +424,26 @@ section h2 {
     font-size: 1.1em;
 }
 
+::selection {
+    background: var(--cor-primaria);
+    color: white;
+}
+
+strong{
+    color: #F2F7FF;
+}
+strong span{
+    color: var(--cor-primaria);
+}
+/* 
+.InfosCard{
+    font-size: 1.05em;
+    background-color: var(--background-card-hover);
+    text-align: left;
+}
+.livroInfo{
+    
+} */
 
 
 
@@ -388,13 +453,16 @@ section h2 {
 
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
+    nav{
+        text-align: center;
+    }
     .sectLiv {
         grid-auto-columns: auto;
         grid-auto-rows: auto;
         margin: auto 14%;
     }
-
-
+    
+    
     .sect1 {
         background-image: url(../imagens/back/livro_com_flor_e_tom_cinza.webp);
         box-shadow: inset 0px -4px 6px #00000088;
@@ -403,11 +471,11 @@ section h2 {
         background-position: center;
         background-repeat: no-repeat;
     }
-
+    
     .sect1 div {
         max-width: 340px;
     }
-
+    
     .livro {
         margin: auto;
         flex-shrink: 0;
@@ -415,27 +483,34 @@ section h2 {
         flex-basis: 10px;
         box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.384);
     }
-
+    
+    
     .livro .sobreLiv {
         display: flex;
         flex-wrap: wrap;
-
+        
         padding: 0;
         margin: auto;
     }
-
+    
     .sect1 h3 {
         padding: 12px 0;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1444px) {
+    nav{
+        text-align: center;
+    }
     .sectLiv {
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media screen and (min-width: 1444px) {
+    nav{
+        text-align: center;
+    }
     .sectLiv {
         grid-template-columns: 1fr 1fr 1fr;
     }
