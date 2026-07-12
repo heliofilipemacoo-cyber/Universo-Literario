@@ -362,7 +362,7 @@ section h2 {
 
 .bookPrevClass>.prevLink a {
     text-decoration: underline;
-    font-size: 1.2em;
+    text-transform: uppercase;
     color: #d0ffd0;
 }
 
