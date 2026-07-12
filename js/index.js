@@ -96,3 +96,14 @@ fetch("json/books.json")
         });
     })
     .catch(error => console.error("Erro ao carregar os livros:", error));
+
+// Carrossel de imagens de fundo do hero (crossfade automático)
+const heroImages = document.querySelectorAll(".hero-bg");
+if (heroImages.length > 1) {
+    let heroIndex = 0;
+    setInterval(() => {
+        heroImages[heroIndex].classList.remove("active");
+        heroIndex = (heroIndex + 1) % heroImages.length;
+        heroImages[heroIndex].classList.add("active");
+    }, 5000); // troca de imagem a cada 5 segundos
+}
