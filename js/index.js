@@ -6,7 +6,10 @@ function aboutBook(img_src, img_alt, prevLink, conteudo) {
     prev.classList.add("show");
     prev.innerHTML = `
         <a href="#"><img src="${img_src}" alt="${img_alt}"></a>
-            <p class="prevLink">Ver <a href="${prevLink}">Pre-Visualização</a></p>
+                <p class="prLink">Ver <a href="${prevLink}" target="_blank" rel="noopener noreferrer" type="application/pdf" title="Ler a pré-visualização do livro (PDF)" aria-label="Abrir a pré-visualização do livro em PDF numa nova aba">
+                    Ler pré-visualização
+                </a></p>
+                
             <p>
             ${conteudo}
             </p>
@@ -37,13 +40,13 @@ class True_content {
     add_more(img_src_pt, img_alt, prevLink, conteudo_pt, conteudo_en, buyLink_pt, buyLink_en) {
         const img_pt = img_src_pt;
         const img_en = img_src_pt.replace(`pt`, `en`);
-
+        
         const img_langs = [img_pt, img_en];
         const contents_langs = [conteudo_pt, conteudo_en];
         
         const buyLinks = [buyLink_pt, buyLink_en];
         for (let index = 0; index < img_langs.length; index++) {
-
+            
             const livro = document.createElement("div");
             livro.className = "livro";
             livro.innerHTML = `
@@ -60,7 +63,7 @@ class True_content {
                     </div>
                 </div>
             `;
-
+            
             const openPreview = () => aboutBook(img_langs[index], img_alt, prevLink, contents_langs[index]);
             livro.querySelector(".sobreLiv img").addEventListener("click", openPreview);
             livro.querySelector(".prevButton").addEventListener("click", openPreview);

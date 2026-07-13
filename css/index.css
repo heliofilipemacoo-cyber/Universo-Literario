@@ -395,7 +395,7 @@ section h2 {
     margin: auto;
 }
 
-.bookPrevClass>.prevLink {
+.bookPrevClass>.prLink {
     transition: all .3s ease;
     text-decoration: none;
     color: var(--cor-primaria);
@@ -404,7 +404,7 @@ section h2 {
     font-size: 1.4em;
 }
 
-.bookPrevClass>.prevLink a {
+.bookPrevClass>.prLink a {
     text-decoration: underline;
     text-transform: uppercase;
     color: var(--cor-primaria);
