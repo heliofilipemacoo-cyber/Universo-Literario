@@ -38,6 +38,8 @@ class True_content {
         this.whereToPut = whereToPut;
     }
     add_more(img_src_pt, img_alt, prevLink, conteudo_pt, conteudo_en, buyLink_pt, buyLink_en) {
+        img_src_pt = "imagens/books_capa/"+img_src_pt;
+        prevLink = "../preVisualizar/"+prevLink;
         const img_pt = img_src_pt;
         const img_en = img_src_pt.replace(`pt`, `en`);
         
