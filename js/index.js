@@ -39,11 +39,13 @@ class True_content {
     }
     add_more(img_src_pt, img_alt, prevLink, conteudo_pt, conteudo_en, buyLink_pt, buyLink_en) {
         img_src_pt = "imagens/books_capa/"+img_src_pt;
-        prevLink = "../preVisualizar/"+prevLink;
+        const prevLink_pt = "../preVisualizar/"+prevLink;
+        const prevLink_en = "../preVisualizar/"+prevLink.replace(`pt`, `en`);
         const img_pt = img_src_pt;
         const img_en = img_src_pt.replace(`pt`, `en`);
         
         const img_langs = [img_pt, img_en];
+        const prevLinks = [prevLink_pt, prevLink_en];
         const contents_langs = [conteudo_pt, conteudo_en];
         
         const buyLinks = [buyLink_pt, buyLink_en];
@@ -66,7 +68,7 @@ class True_content {
                 </div>
             `;
             
-            const openPreview = () => aboutBook(img_langs[index], img_alt, prevLink, contents_langs[index]);
+            const openPreview = () => aboutBook(img_langs[index], img_alt, prevLinks[index], contents_langs[index]);
             livro.querySelector(".sobreLiv img").addEventListener("click", openPreview);
             livro.querySelector(".prevButton").addEventListener("click", openPreview);
             this.whereToPut.appendChild(livro);
