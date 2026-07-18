@@ -39,8 +39,8 @@ class True_content {
     }
     add_more(img_src_pt, img_alt, prevLink, conteudo_pt, conteudo_en, buyLink_pt, buyLink_en) {
         img_src_pt = "imagens/books_capa/"+img_src_pt;
-        const prevLink_pt = "../preVisualizar/"+prevLink;
-        const prevLink_en = "../preVisualizar/"+prevLink.replace(`pt`, `en`);
+        const prevLink_pt = "pdfs/preVisualizar/"+prevLink;
+        const prevLink_en = "pdfs/preVisualizar/"+prevLink.replace(`pt`, `en`);
         const img_pt = img_src_pt;
         const img_en = img_src_pt.replace(`pt`, `en`);
         
