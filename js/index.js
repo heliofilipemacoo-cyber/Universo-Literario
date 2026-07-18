@@ -50,7 +50,9 @@ class True_content {
         
         const buyLinks = [buyLink_pt, buyLink_en];
         for (let index = 0; index < img_langs.length; index++) {
-            
+            if (contents_langs[index] === "NO") {
+                continue;
+            }
             const livro = document.createElement("div");
             livro.className = "livro";
             livro.innerHTML = `
