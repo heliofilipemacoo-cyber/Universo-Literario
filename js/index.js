@@ -116,3 +116,4 @@ if (heroImages.length > 1) {
         heroImages[heroIndex].classList.add("active");
     }, 5000); // troca de imagem a cada 5 segundos
 }
+document.getElementById("anoAtual").textContent = new Date().getFullYear();
